@@ -2,9 +2,14 @@ package nextstep.optional;
 
 import org.junit.jupiter.api.Test;
 
+import javax.swing.text.html.Option;
+
+import java.util.Optional;
+
 import static nextstep.optional.User.ageIsInRange1;
 import static nextstep.optional.User.ageIsInRange2;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserTest {
     @Test
@@ -24,4 +29,5 @@ public class UserTest {
         assertThat(ageIsInRange2(new User("crong", 29))).isFalse();
         assertThat(ageIsInRange2(null)).isFalse();
     }
+
 }
