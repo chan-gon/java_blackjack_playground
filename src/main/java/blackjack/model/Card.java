@@ -10,8 +10,18 @@ public class Card {
     private String suit;
 
     public Card(String number, String suit) {
+        number = checkLetter(number);
         this.number = number;
         this.suit = suit;
+    }
+
+    private String checkLetter(String number) {
+        for (Letter letter : Letter.values()) {
+            if (number == letter.getLetterName()) {
+                number = letter.getLetterNumber();
+            }
+        }
+        return number;
     }
 
     public String getNumber() {
