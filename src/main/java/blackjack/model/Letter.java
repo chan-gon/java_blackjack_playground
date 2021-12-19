@@ -18,7 +18,7 @@ public enum Letter {
         return letterNumber;
     }
 
-    public int getLetterNumber() {
-        return letterNumber;
+    public String getLetterName() {
+        return letterName;
     }
 }

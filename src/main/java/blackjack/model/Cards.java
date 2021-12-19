@@ -11,8 +11,6 @@ public class Cards {
     }
 
     public int calculateCardNum() {
-        return cards.stream()
-                .mapToInt(Card::getNumber)
-                .sum();
+        return 0;
     }
 }
