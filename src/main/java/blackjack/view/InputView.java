@@ -11,11 +11,14 @@ public class InputView {
     private static final String ANSWER_YES = "y";
     private static final String ANSWER_NO = "n";
     private static final String REGEX = "[0-9]+";
-    private Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
 
     public InputView(Scanner scanner) {
         checkEmptyInput(scanner);
         this.scanner = scanner;
+    }
+
+    public InputView() {
     }
 
     public String askPlayerNames() {
