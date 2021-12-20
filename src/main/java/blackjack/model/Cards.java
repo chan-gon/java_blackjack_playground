@@ -13,8 +13,18 @@ public class Cards {
     public int calculateCardNum() {
         return cards.stream()
                 .map(Card::getNumber)
+                .map(number -> convertNameToNumber(number))
                 .mapToInt(Integer::parseInt)
                 .sum();
+    }
+
+    private String convertNameToNumber(String number) {
+        for (Letter letter : Letter.values()) {
+            if (number.equals(letter.getLetterName())) {
+                number = letter.getLetterNumber();
+            }
+        }
+        return number;
     }
 
 }
