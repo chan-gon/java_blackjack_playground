@@ -2,8 +2,8 @@ package blackjack.model;
 
 public class Card {
 
-    private String number;
-    private String suit;
+    private final String number;
+    private final String suit;
 
     public Card(String number, String suit) {
         this.number = number;
@@ -18,7 +18,4 @@ public class Card {
         return suit;
     }
 
-    public String getCard() {
-        return number + suit;
-    }
 }

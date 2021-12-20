@@ -1,5 +1,7 @@
 package blackjack.model;
 
+import blackjack.utils.RandomUtil;
+
 import java.util.List;
 
 public class Cards {
