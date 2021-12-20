@@ -51,7 +51,6 @@ public class InputView {
     }
 
     private void checkAnswer(String answer) {
-        System.out.println("answer = " + !ANSWER_NO.equals(answer));
         if (!ANSWER_YES.equals(answer) && !ANSWER_NO.equals(answer)) {
             throw new IllegalArgumentException(ANSWER_CHECK_MSG);
         }
