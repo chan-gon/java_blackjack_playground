@@ -5,16 +5,16 @@ public class Card {
         스페이드, 하트, 클로버, 다이아몬드
     }
 
-    private final Suit suit;
     private final String number;
+    private final Suit suit;
 
-    public Card(Suit suit, String number) {
-        this.suit = suit;
+    public Card(String number, Suit suit) {
         this.number = number;
+        this.suit = suit;
     }
 
     public String getCardName() {
-        return suit + number;
+        return number + suit;
     }
 
     public String getNumber() {
