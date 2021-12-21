@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Cards {
-    private static final int MIN_CARD_NUM = 2;
-    private static final int MAX_CARD_NUM = 10;
-    private static final int BLACKJACK_NUM = 21;
-    private static final int KING_QUEEN_JACK_NUM = 10;
-
     private final ArrayList<Card> cards;
     private int cardsSum;
 
@@ -27,7 +22,7 @@ public class Cards {
 
     public static ArrayList<Card> setCards() {
         ArrayList<Card> cards = new ArrayList<>();
-        for (int i = MIN_CARD_NUM; i < MAX_CARD_NUM; i++) {
+        for (int i = Rule.MIN_CARD_NUM.getNumber(); i < Rule.MAX_CARD_NUM.getNumber(); i++) {
             for (Card.Suit suit : Card.Suit.values()) {
                 cards.add(new Card(String.valueOf(i), suit));
             }
@@ -58,7 +53,7 @@ public class Cards {
 
     public int getCardPointNumber(String number) {
         if (number.equals("K") || number.equals("Q") || number.equals("J")) {
-            return KING_QUEEN_JACK_NUM;
+            return Rule.KING_QUEEN_JACK_NUM.getNumber();
         }
         if (number.equals("A")) {
             return processAce();
@@ -67,7 +62,7 @@ public class Cards {
     }
 
     private int processAce() {
-        if (cardsSum + 11 <= BLACKJACK_NUM) {
+        if (cardsSum + 11 <= Rule.BLACKJACK_NUM.getNumber()) {
             return 11;
         }
         return 1;
