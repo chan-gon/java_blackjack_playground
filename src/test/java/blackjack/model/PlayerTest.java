@@ -20,9 +20,4 @@ public class PlayerTest {
     void getNameTest() {
         assertThat(player.getName()).isEqualTo("java");
     }
-
-    @Test
-    void getResultTest() {
-        assertThat(player.getCardsSum()).isEqualTo("승리");
-    }
 }

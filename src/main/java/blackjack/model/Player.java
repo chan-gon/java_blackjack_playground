@@ -62,4 +62,21 @@ public class Player {
         }
         return -bettingMoney;
     }
+
+    public int checkBlackJackFirst(int dealerCardSum) {
+        if (dealerCardSum == Rule.BLACKJACK_NUM.getNumber() && cardsSum == Rule.BLACKJACK_NUM.getNumber()) {
+            int dealerMoney = bettingMoney;
+            bettingMoney = 0;
+            return dealerMoney;
+        }
+        if (dealerCardSum != Rule.BLACKJACK_NUM.getNumber() && cardsSum == Rule.BLACKJACK_NUM.getNumber()) {
+            bettingMoney += bettingMoney / 2;
+            return -bettingMoney;
+        }
+        return 0;
+    }
+
+    public void addDealerProfit(int money) {
+        bettingMoney += money;
+    }
 }
