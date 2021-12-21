@@ -50,4 +50,8 @@ public class Players {
         int dealerMoney = players.get(idx).checkBlackJackFirst(dealerCardSum);
         players.get(0).addDealerProfit(dealerMoney);
     }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 }
